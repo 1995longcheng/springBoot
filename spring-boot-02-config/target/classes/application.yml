@@ -1,0 +1,36 @@
+#server:
+#  port: 8081
+#
+#person:
+#  age: 19
+#  boss: false
+#  birth: 2001/12/12
+#  maps: {k1: v1,k2: v2}
+#  lists:
+#    - lisi
+#    - zhouliu
+#  dog:
+#    name: 旺财
+#    age: 15
+#last-name: zhangsan
+
+server:
+  port: 8091
+
+#spring:
+#    profiles:
+#     active: prod
+
+---
+
+server:
+  port: 8092
+
+spring:
+ profiles: dev
+
+---
+server:
+   port: 8093
+spring:
+   profiles: prod

@@ -1,0 +1,49 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.llc.bean.Person",
+      "name": "person",
+      "type": "com.llc.bean.Person"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.llc.bean.Person",
+      "name": "person.age",
+      "description": "第二种注入值的注解是@value\n <bean class=\"Person\">\n     <property name\"lastName\" value=\"字面变量\/${key}从环境变量、配置文件中获取值\/#{Spel}计算\"><\/>\n <bean\/>",
+      "type": "java.lang.Integer"
+    },
+    {
+      "sourceType": "com.llc.bean.Person",
+      "name": "person.birth",
+      "type": "java.util.Date"
+    },
+    {
+      "sourceType": "com.llc.bean.Person",
+      "defaultValue": false,
+      "name": "person.boss",
+      "type": "java.lang.Boolean"
+    },
+    {
+      "sourceType": "com.llc.bean.Person",
+      "name": "person.dog",
+      "type": "com.llc.bean.Dog"
+    },
+    {
+      "sourceType": "com.llc.bean.Person",
+      "name": "person.last-name",
+      "type": "java.lang.String"
+    },
+    {
+      "sourceType": "com.llc.bean.Person",
+      "name": "person.lists",
+      "type": "java.util.List<java.lang.Object>"
+    },
+    {
+      "sourceType": "com.llc.bean.Person",
+      "name": "person.maps",
+      "type": "java.util.Map<java.lang.String,java.lang.Object>"
+    }
+  ]
+}
