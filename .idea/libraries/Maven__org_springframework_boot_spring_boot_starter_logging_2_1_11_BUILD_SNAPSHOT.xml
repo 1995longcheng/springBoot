@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: org.springframework.boot:spring-boot-starter-logging:2.1.11.BUILD-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://E:/ideaMaven/org/springframework/boot/spring-boot-starter-logging/2.1.11.BUILD-SNAPSHOT/spring-boot-starter-logging-2.1.11.BUILD-20191120.123118-12.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://E:/ideaMaven/org/springframework/boot/spring-boot-starter-logging/2.1.11.BUILD-SNAPSHOT/spring-boot-starter-logging-2.1.11.BUILD-20191120.123118-12-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://E:/ideaMaven/org/springframework/boot/spring-boot-starter-logging/2.1.11.BUILD-SNAPSHOT/spring-boot-starter-logging-2.1.11.BUILD-20191120.123118-12-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -2,14 +2,21 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
 <body>
     <h1>成功！</h1>
     <!--th:text 将div里面的文本内容设置为 -->
-    <div th:text = "${hello}">这里设置实现欢迎信息</div>
+    <div th:text = "${hello}" th:id="${hello}" th:class="${hello}" >这里设置实现欢迎信息</div>
+<hr/>
+<div th:text="${hello}"></div>
+<div th:utext="${hello}"></div>
+<hr/>
+<!--th:each 每次遍历都会生成当前这个标签：3个h4-->
+<h4 th:text="${user}" th:each="user:${users}" ></h4>
+<hr/>
+<h5>
+    <span th:each="user:${users}"></span>
+</h5>
 </body>
 </html>
