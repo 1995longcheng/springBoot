@@ -2,13 +2,12 @@ package com.llc.config;
 
 import com.llc.component.LoginHandlerInterceptor;
 import com.llc.component.MyLocaleResolver;
+import org.springframework.boot.autoconfigure.web.embedded.EmbeddedWebServerFactoryCustomizerAutoConfiguration;
+import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.LocaleResolver;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.config.annotation.*;
 
 /**
  * Created by catt on 2019/11/21.
@@ -17,6 +16,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 //@EnableWebMvc//这个注解是全面接管mvc的自动配置的，如果启用这个注解，springbootMVC自动配置将会全部失效
 @Configuration
 public class MyMvcConfig extends WebMvcConfigurerAdapter{
+
+//    @Bean
+//    public WebServerFactoryCustomizer embeddedWebServerFactoryCustomizerAutoConfiguration(){
+//        return new EmbeddedWebServerFactoryCustomizerAutoConfiguration(){
+//          //定制嵌入式的servlet容器相关的规则
+//            @Override
+//            public void Customers(Configuraa)
+//        };
+//    }
 
     @Override
     public  void addViewControllers(ViewControllerRegistry registry){
@@ -27,8 +35,8 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter{
 
     //所有的WebMvcconfigurerAadpter组件都会一起起作用
     @Bean//将组件注册在容器中才生效
-    public WebMvcConfigurerAdapter webMvcConfigurerAdapter(){
-       WebMvcConfigurerAdapter webMvcConfigurerAdapter  =  new WebMvcConfigurerAdapter(){
+    public WebMvcConfigurer webMvcConfigurerAdapter(){
+        WebMvcConfigurer webMvcConfigurer   =  new WebMvcConfigurer(){
 
            @Override
            public void addViewControllers(ViewControllerRegistry registry) {
@@ -50,7 +58,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter{
            }
 
        };
-       return webMvcConfigurerAdapter;
+       return webMvcConfigurer;
     }
 
     @Bean

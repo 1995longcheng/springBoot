@@ -1,6 +1,7 @@
 package com.llc.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,10 +21,11 @@ public class LoginController {
     @PostMapping("/user/login")
     public String loginSuccess(@RequestParam("username") String userName,
                                @RequestParam("password") String password ,
-                               Map<String,Object> map, HttpSession session){
+                               Map<String,Object> map, HttpSession session, Model model){
         if (!StringUtils.isEmpty(userName) && "1234".equals(password)){
             //增加过滤器，用session来标记以登陆
             session.setAttribute("loginUser",userName);
+            model.addAttribute("userName",userName);
             //登陆成功,防止表单重复提交，可以重定向到主页
             return "redirect:/main.html";
         }else {

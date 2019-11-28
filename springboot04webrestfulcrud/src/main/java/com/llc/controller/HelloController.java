@@ -1,8 +1,10 @@
 package com.llc.controller;
 
+import com.llc.exception.UserNotExistException;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
@@ -23,7 +25,11 @@ public class HelloController {
 
     @ResponseBody
     @RequestMapping("/hello")
-    public String sayHello(){
+    public String sayHello(@RequestParam("user") String user){
+        if (user.equals("aaa")){
+            throw new UserNotExistException();
+
+        }
         return "hello world";
     }
 
